@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CronTester": {
+      "commandName": "Project",
+      "commandLineArgs": "\"0 0 12 * */2 Mon\""
+    }
+  }
+}
