@@ -7,11 +7,13 @@ namespace CronTester
     {
         static void Main(string[] args)
         {
-            if (args.Length != 1)
+            if (args.Length < 1)
             {
-                Console.WriteLine("Pass cron expression on command line");
+                Console.WriteLine("Pass cron expression on command line, and optionally an iteration count");
                 return;
             }
+
+            int maxCount = args.Length == 1 ? 10 : Int32.Parse(args[1]);
 
             try
             {
@@ -23,7 +25,7 @@ namespace CronTester
                     Console.WriteLine(occurence);
 
                     count++;
-                    if (count == 10) break;
+                    if (count == maxCount) break;
                 }
             }
             catch (Exception e)
